@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center mt-5"> <button routerLink="/boleto/cadastro/{{id_mentor}}" class="mt-5" class="custom-btn btn-2" >Cadastrar boleto</button> </div>
+
+<h5 class="card-title text-center mt-5 letraTit"> Mentor: {{id_mentor}} - {{nomeMentor}}</h5>
+
+<div class="card mt-5">
+  <div class="card-body">
+   <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Data de Vencimento</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Status</th>
+          <th scope="col" colspan="2">Quitar/Cancelar</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let boleto of boletos">
+          <th scope="row">{{boleto.codigo}}</th>
+          <td>{{boleto.bo_descricao}}</td>
+          <td>{{boleto.bo_dataPagamento | date : 'dd/MM/yyyy' }}</td>
+          <td>{{boleto.bo_valor | currency:'BRL'}}</td>
+          <td>{{boleto.bo_status}}</td>
+          <td><button (click)="quitarBoleto(boleto, boleto.codigo)" *ngIf="boleto.bo_status == 'PENDENTE'"class="mx-3" mat-raised-button color="primary" > Q</button></td>
+          <td><button (click)="cancelarBoleto(boleto, boleto.codigo)" *ngIf="boleto.bo_status == 'PENDENTE'"class="" mat-raised-button color="primary"> C</button></td>
+          <td>
+            <mat-icon routerLink="/boleto/edicao/{{boleto.codigo}}/{{id_mentor}}" color="primary"> border_color</mat-icon>
+            <mat-icon routerLink="/boleto/exclusao/{{boleto.codigo}}/{{id_mentor}}" class="mx-2" color="primary"> delete</mat-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <button routerLink="/mentores" class="btn btn-secondary">Voltar</button>
+  </div>
+  </div>
+</div>

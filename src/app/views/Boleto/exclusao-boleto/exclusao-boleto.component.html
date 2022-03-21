@@ -1,0 +1,21 @@
+<h5 class="card-title text-center mt-5 letraTit">Exclusão de Boleto</h5>
+<div class="card w-50 mt-5">
+  <div class="card-body">
+
+    <form>
+      <div class="mb-3">
+        <label class="form-label letraPar">Descrição</label>
+        <input type="text" class="form-control" readonly [(ngModel)]="boleto.bo_descricao" name="bo_descricao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label letraPar">Data de Vencimento</label>
+        <input type="date" class="form-control" readonly [(ngModel)]="boleto.bo_dataPagamento"  name="bo_dataPagamento" >
+      </div>
+      <div class="mb-3">
+        <label class="form-label letraPar">Valor</label>
+        <input type="text" class="form-control" readonly [(ngModel)]="boleto.bo_valor " name="bo_valor" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left'}">
+      </div>
+      <button (click)="excluirBoleto()" mat-raised-button color="primary" class="mx-3">Excluir</button>
+      <button routerLink="/boleto/lista/{{id_mentor}}" mat-raised-button color="primary" class="mx-3">Cancelar</button>
+    </form>
+  </div>

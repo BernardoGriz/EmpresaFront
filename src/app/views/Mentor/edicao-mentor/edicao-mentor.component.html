@@ -1,0 +1,42 @@
+<div class="card mat-elevation-z4 card-form w-50">
+
+  <div class="card-body">
+
+    <button mat-mini-fab color="primary" routerLink="/mentores" title="Voltar página" [ngStyle]="{'color':'purple'}">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+
+    <div class="titulo text-center">
+      <h1>Editor de Mentores</h1>
+    </div>
+
+    <form>
+
+      <div class="mb-3">
+        <label class="form-label letraPar" >Nome</label>
+        <input type="text" class="form-control" [(ngModel)]="mentor.mentor_nome" name="mentor_nome" >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label letraPar" >CPF</label>
+        <input type="text" class="form-control" [(ngModel)]="mentor.mentor_cpf" name="mentor_cpf">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label letraPar" >Cargo</label>
+        <input type="text" class="form-control" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label letraPar" >Foto</label>
+        <input type="text" class="form-control" [(ngModel)]="mentor.mentor_foto" name="mentor_foto">
+      </div>
+
+      <div class="mb-3">
+        <button mat-raised-button color="primary" class="mx-3"(click)="editarMentor()">Editar</button>
+        <button mat-raised-button color="primary" class="mx-3" routerLink="/mentor">Cancelar</button>
+        <!-- <button class="bot-card" type="button" (click)="showDiv.opcaonao = !showDiv.opcaonao;showDiv.atualizar = false">Não</button> -->
+      </div>
+    </form>
+  </div>
+</div>

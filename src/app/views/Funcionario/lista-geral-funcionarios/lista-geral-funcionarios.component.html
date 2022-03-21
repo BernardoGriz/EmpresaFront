@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center mt-5"><button routerLink="/cadastrarFunc" class="custom-btn btn-2">Cadastrar Funcionário</button></div>
+
+<h1 class="card-title text-center letraTit mt-5 mb-5">Funcionários da Empresa</h1>
+
+<div class="card">
+  <div class="card-body">
+
+    <div style="height: 300px; overflow: auto;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID do funcionario</th>
+            <th scope="col">Nome do funcionario</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Nome do Cargo</th>
+            <th scope="col">Atribuição do Cargo</th>
+            <th scope="col">Atribuir Cargo</th>
+            <!-- <th scope="col">Boletos</th> -->
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let funcionario of funcionarios">
+            <th scope="row">{{funcionario.id_func}}</th>
+            <td>{{funcionario.func_nome}}</td>
+            <td>{{funcionario.func_cidade}}</td>
+            <td>{{funcionario.car_nome}}</td>
+            <td>{{funcionario.car_atribuicao}}</td>
+            <td><button routerLink="/funcionario/atribuirCargo/{{funcionario.id_func}}/{{funcionario.id_cargo}}"
+              mat-raised-button color="primary">Cargo</button></td>
+            <!-- <td><i routerLink="/boleto/listaPorFuncionario/{{funcionario.id_func}}" class="fa-solid fa-coins"></i></td> -->
+            <td>
+              <mat-icon routerLink="/editarFunc/{{funcionario.id_func}}/{{funcionario.id_cargo}}" color="primary">border_color</mat-icon>
+              <mat-icon routerLink="/excluirFunc/{{funcionario.id_func}}" color="primary">delete</mat-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

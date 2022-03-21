@@ -1,0 +1,36 @@
+<div class="card mat-elevation-z4 card-form w-50">
+  <div class="card-body">
+    <button mat-mini-fab color="primary" routerLink="/mentores" title="Voltar página" [ngStyle]="{'color':'white'}">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+    <div class="titulo text-center">
+      <h1>Exclusão de Mentor</h1>
+      <h3>ID:{{mentor.id_mentor}} {{mentor.mentor_nome}}</h3>
+    </div>
+    <form>
+      <div  class="mb-3">
+        <label class="form-label letraPar">Nome</label>
+        <input type="text" [(ngModel)]="mentor.mentor_nome" class="form-control" name="mentor_nome"
+          readonly>
+      </div>
+      <div  class="mb-3">
+        <label class="form-label letraPar">CPF</label>
+        <input type="text" [(ngModel)]="mentor.mentor_cpf" class="form-control" class="form-control" name="mentor_cpf"
+          readonly>
+      </div>
+      <div class="mb-3">
+        <label class="form-label letraPar">Cargo</label>
+        <input type="text" [(ngModel)]="mentor.mentor_cargo" class="form-control" name="mentor_cargo"
+          readonly>
+      </div>
+      <div class="mb-3">
+        <label class="form-label letraPar">Foto</label>
+        <input type="text" [(ngModel)]="mentor.mentor_foto" class="form-control" name="mentor_foto"
+          readonly>
+      </div>
+      <div class="mb-3">
+        <button mat-raised-button color="primary" class="mx-3" (click)="excluirMentor()">Excluir</button>
+      </div>
+    </form>
+  </div>
+</div>

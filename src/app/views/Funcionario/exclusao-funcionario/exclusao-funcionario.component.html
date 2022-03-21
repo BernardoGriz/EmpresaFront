@@ -1,0 +1,18 @@
+<h5 class="card-title text-center mt-5 letraTit">Exclusão do Funcionário</h5>
+<div class="card w-50 mt-5">
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label class="form-label letraPar">Nome do Funcionário</label>
+        <input type="text" readonly class="form-control" [(ngModel)]="funcionario.func_nome" name="func_nome">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label letraPar">Cidade do Funcionário</label>
+        <input type="text" readonly class="form-control" [(ngModel)]="funcionario.func_cidade" name="func_cidade">
+      </div>
+      <button (click)="excluirFuncionario()" mat-raised-button color="primary">Excluir</button>
+      <button (click)="cancelarExclusao()" mat-raised-button color="primary" class="mx-3">Cancelar</button>
+    </form>
+  </div>
+</div>

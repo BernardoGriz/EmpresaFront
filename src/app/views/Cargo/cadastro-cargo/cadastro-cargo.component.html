@@ -1,0 +1,21 @@
+<h1 class="card-title text-center mt-5 letraTit">Cadastro de Cargo</h1>
+
+<div class="card w-50 mt-5">
+
+  <div class="card-body">
+
+    <form>
+      <div class="mb-3">
+        <label class="form-label letraPar">Nome do Cargo:</label>
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_nome" name="car_nome">
+      </div>
+      <div class="mb-3">
+        <label class="form-label letraPar">Atribuição do Cargo:</label>
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao">
+      </div>
+      <button mat-raised-button color="primary" class="mx-3" (click)="cadastrarUmCargo()">Cadastrar</button>
+      <button mat-raised-button color="primary" routerLink="/cargo" clas="mx-3" type="reset">Voltar</button>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,14 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  font-size: medium;
+}
+
+.mat-toolbar {
+  height: 40px;
+}
+
+span {
+  font-size: small;
+  margin: 0 auto;
+}

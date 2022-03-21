@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center letraPar">Dados do Funcionário</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label letraPar">Nome do Funcionário</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="funcionario.func_nome" name="func_nome">
+            </div>
+            <div class="mb-3">
+              <label class="form-label letraPar">Cidade do Funcionário</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="funcionario.func_cidade" name="func_cidade">
+            </div>
+            <button routerLink="/funcComCargo" class="btn btn-secondary mx-3">Cancelar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="card">
+        <h5 class="card-title text-center mx-3 mt-3 letraPar">ID Cargo do Funcionário: {{cargoEscolhido.id_cargo}} </h5>
+        <div class="card-body">
+
+          <div class="mb-3">
+            <label class="form-label letraPar">Nome do Cargo</label>
+            <input type="text" readonly class="form-control" [(ngModel)]="cargoEscolhido.car_nome" name="car_nome">
+          </div>
+          <div class="mb-3">
+            <label class="form-label letraPar">Atribuição do Cargo</label>
+            <input type="text" readonly class="form-control" [(ngModel)]="cargoEscolhido.car_atribuicao"
+              name="car_atribuicao">
+          </div>
+          <hr>
+
+          <h5 class="card-title my-2 text-center letraPar">Escolha novo cargo para o funcionário:</h5>
+          <select [(ngModel)]="cargoEscolhido" name="cargoEscolhido" (ngModelChange)="mostrarCargo()">
+            <option *ngFor="let cargo of cargos" [ngValue]="cargo">
+              {{cargo.car_nome}} - {{cargo.car_atribuicao}}
+            </option>
+          </select>
+          <button (click)="atribuirCargo()" class="mx-3"  mat-raised-button color="primary">Salvar</button>
+
+          <hr>
+          <div class="card text-center my-2">
+            <h5 class="card-title letraPar">Deixar funcionário sem cargo?
+              <button (click)="deixarFuncSemCargo()" class="mx-3 my-2"  mat-raised-button color="primary">Confirmar</button>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

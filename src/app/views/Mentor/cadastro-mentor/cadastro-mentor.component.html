@@ -1,0 +1,29 @@
+<h1 class="card-title text-center mt-5 letraTit">Cadastro de novo Mentor</h1>
+
+<div class="card w-50 mt-5 ">
+  <div class="card-body">
+
+    <form>
+      <div class="mb-3">
+        <label class="form-label letraPar">Nome do Mentor:</label>
+        <input type="text" class="form-control" [(ngModel)]="mentor.mentor_nome" name="mentor_nome">
+      </div>
+      <div class="mb-3">
+        <label class="form-label letraPar">CPF do Mentor:</label>
+        <input type="text" class="form-control" [(ngModel)]="mentor.mentor_cpf" name="mentor_cpf">
+      </div>
+      <div class="mb-3">
+        <label class="form-label letraPar">Cargo do Mentor:</label>
+        <input type="text" class="form-control" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo">
+      </div>
+      <button (click)="cadastrarMentor()" mat-raised-button color="primary" class="mx-2">Cadastrar</button>
+      <button mat-raised-button color="primary" class="mx-2" type="reset">Limpar</button>
+      <hr>
+      <div class="mb-3">
+        <label class="form-label letraPar">Foto do Mentor:</label>
+        <input type="file" class="form-control" [disabled]="!mentorCadastrado" (change)="importarImg($event)" name="mentor_foto">
+      </div>
+    </form>
+    <hr>
+  </div>
+</div>

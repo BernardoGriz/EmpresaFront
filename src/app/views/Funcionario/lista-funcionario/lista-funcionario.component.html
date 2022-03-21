@@ -1,0 +1,32 @@
+<h5 class="card-title text-center mt-5 letraTit">Funcionários</h5>
+
+  <div class="card mt-5">
+    <div class="card-body">
+      <!-- <button routerlink="/cadastrarCargo" class="btn btn-danger">Lista Funcionários</button> -->
+      <div style="height: 300px; overflow: auto;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let funcionario of funcionario">
+            <th scope="row">{{funcionario.id_func}}</th>
+            <td>{{funcionario.func_nome}}</td>
+            <td>{{funcionario.func_cidade}}</td>
+            <td><mat-icon routerLink="/editarFunc/{{funcionario.id_func}}/{{id_cargo}}"  color="primary" >border_color</mat-icon>
+                <mat-icon routerLink="/excluirFunc/{{funcionario.id_func}}/{{id_cargo}}"  color="primary">delete</mat-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+
+
+

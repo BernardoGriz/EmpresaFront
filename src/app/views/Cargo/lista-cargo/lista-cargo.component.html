@@ -1,0 +1,45 @@
+<div class="container d-flex justify-content-center mt-5"><button (click)="navegarCadastroCargo()" class="custom-btn btn-2">Cadastrar Cargo</button></div>
+
+<h1 class="card-title text-center letraTit mt-5 mb-5">Cargos</h1>
+
+
+  <div class="card mt-5">
+    <div class="card-body">
+     <div>
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome do Cargo</th>
+            <th scope="col">Atribuição</th>
+            <th scope="col">Nome do Mentor</th>
+            <th scope="col">Cargo do Mentor</th>
+            <th scope="col">Mentor</th>
+            <th scope="col">Funcionário</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let cargo of cargos">
+            <th scope="row">{{cargo.id_cargo}}</th>
+            <td>{{cargo.car_nome}}</td>
+            <td>{{cargo.car_atribuicao}}</td>
+            <td>{{cargo.mentor_nome}}</td>
+            <td>{{cargo.mentor_cargo}}</td>
+            <td>
+              <mat-icon routerLink="/mentor/{{cargo.id_cargo}}">person_pin</mat-icon>
+            </td>
+            <td><mat-icon routerLink="/funcCargo/{{cargo.id_cargo}}">person_pin</mat-icon></td>
+            <td>
+                <mat-icon routerLink="/editarCargo/{{cargo.id_cargo}}"  color="primary">border_color</mat-icon>
+                <mat-icon routerLink="/excluirCargo/{{cargo.id_cargo}}" color="primary">delete</mat-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+

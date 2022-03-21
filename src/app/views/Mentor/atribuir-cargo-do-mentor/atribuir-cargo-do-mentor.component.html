@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center letraPar">Dados do Mentor</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label letraPar">Nome do Mentor</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="mentor.mentor_nome" name="mentor_nome">
+            </div>
+            <div class="mb-3">
+              <label class="form-label letraPar">Cargo do Mentor</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo">
+            </div>
+            <button class="btn btn-secondary mx-3" type="reset">Cancelar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="card">
+        <h5 class="card-title mt-3 text-center letraPar">Cargo do Mentorado</h5>
+        <div class="card-body">
+          <div class="mb-3">
+            <label class="form-label letraPar">Nome Cargo</label>
+            <input type="text" readonly [(ngModel)]="cargo.car_nome" class="form-control" name="car_nome">
+          </div>
+          <div class="mb-3">
+            <label class="form-label letraPar">Atribuição Cargo</label>
+            <input type="text" readonly class="form-control" [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao">
+          </div>
+          <hr>
+          <div class="card text-center">
+            <h5 class="card-title my-2 letraPar">Escolha um novo Cargo para o mentor:</h5>
+            <div class="card-body">
+              <select [(ngModel)]="cargoSemMentorEscolhido" name="cargoSemMentorEscolhido"
+                (ngModelChange)="escolherCargo()">
+                <option *ngFor="let cargo of cargosSemMentor" [ngValue]="cargo">
+                  {{cargo.car_nome}} - {{cargo.car_atribuicao}}
+                </option>
+              </select>
+              <button (click)="atribuirCargo()" mat-raised-button color="primary" class="mx-3">Salvar</button>
+            </div>
+          </div>
+          <hr>
+          <div class="card my-2">
+            <h5 class="card-title text-center letraPar">Deixar Mentor sem Cargo?</h5>
+            <div class="card-body d-flex justify-content-center">
+              <button (click)="deixarCargoSemMentor()" mat-raised-button color="primary">Confirmar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

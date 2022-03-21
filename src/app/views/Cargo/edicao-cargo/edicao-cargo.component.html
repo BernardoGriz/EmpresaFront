@@ -1,0 +1,21 @@
+<h5 class="card-title text-center mt-5 letraTit ">Editar Um Cargo</h5>
+<div class="card w-50 mt-5">
+  <div class="card-body">
+   
+    <form>
+      <div class="mb-3">
+        <label class="form-label letraPar">Cargo</label>
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_nome" name="car_nome">
+      </div>
+      <div class="mb-3">
+        <label class="form-label letraPar">Atribuição</label>
+        <input type="text" class="form-control" [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao">
+      </div>
+      <button mat-raised-button color="primary"class="btn btn-c mx-3" (click)="editarCargo()">Editar</button>
+      <button mat-raised-button color="primary"class="btn btn-c mx-3" (click)="cancelarEdicao()">Cancelar</button>
+    </form>
+  </div>
+</div>
+
+
+
